@@ -39,12 +39,12 @@ def main():
         
         for object in updatable:
             object.update(dt)
+            if type(object) == Asteroid and player1.checkCollisions(object):
+                print('Game over!')
+                exit()
         
         dt = clock.tick()/1000
         pygame.display.flip()
 
 if __name__ == "__main__":
     main()
-
-
-# comment to test github 
