@@ -15,8 +15,8 @@ def split_or_kill(asteroid, field):
     if(new_radius < ASTEROID_MIN_RADIUS):
         asteroid.kill()
     else:
-        first_velocity = asteroid.velocity.rotate(-1*random_angle)
-        second_velocity = asteroid.velocity.rotate(random_angle)
+        first_velocity = 1.2*asteroid.velocity.rotate(-1*random_angle)
+        second_velocity = 1.2*asteroid.velocity.rotate(random_angle)
         field.spawn(new_radius, asteroid.position, first_velocity)
         field.spawn(new_radius, asteroid.position, second_velocity)
         asteroid.kill()
